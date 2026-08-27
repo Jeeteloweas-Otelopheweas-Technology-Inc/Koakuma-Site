@@ -1,6 +1,6 @@
 # Koakuma Site
 
-Official website and signed update feed for Koakuma, a native macOS SQLite database workspace.
+Official website and signed update feed for Koakuma, a native macOS SQLite database client.
 
 ## Published paths
 

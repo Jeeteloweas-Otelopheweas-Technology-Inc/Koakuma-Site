@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Koakuma is a native SQLite database workspace for macOS.">
+  <meta name="description" content="Koakuma is a native SQLite database client for macOS.">
   <meta name="theme-color" content="#090b13">
   <title>Koakuma — The little devil in your data library</title>
   <link rel="icon" type="image/png" href="assets/koakuma-icon.png">
@@ -16,7 +16,7 @@
       <span>Koakuma</span>
     </a>
     <nav aria-label="Primary navigation">
-      <a href="#library" data-i18n="navLibrary">The Library</a>
+      <a href="#overview" data-i18n="navOverview">Overview</a>
       <a href="#capabilities" data-i18n="navCapabilities">Capabilities</a>
       <a href="#updates" data-i18n="navUpdates">Updates</a>
       <button class="language-button" id="language-button" type="button" aria-label="Switch language">中文</button>
@@ -24,14 +24,14 @@
   </header>
 
   <main id="top">
-    <section class="hero" id="library">
+    <section class="hero" id="overview">
       <div class="hero-copy">
         <p class="eyebrow" data-i18n="eyebrow">The little devil in your data library</p>
         <h1 data-i18n="headline">Every table in its place.<br>A whisper away.</h1>
-        <p class="hero-description" data-i18n="heroDescription">Koakuma is a native SQLite workspace for macOS—a quiet library assistant for large tables, precise edits, structured values, and carefully cast SQL.</p>
+        <p class="hero-description" data-i18n="heroDescription">Koakuma is a native SQLite client for macOS. Smart Edit Mode chooses an editor from the value type, length, and detected format.</p>
         <div class="hero-actions">
           <a class="button primary" href="#updates" data-i18n="download">Download for macOS</a>
-          <a class="button secondary" href="#capabilities" data-i18n="explore">Explore the library</a>
+          <a class="button secondary" href="#capabilities" data-i18n="explore">Explore capabilities</a>
         </div>
         <p class="requirements" data-i18n="requirements">Requires macOS 15 or later · Apple silicon and Intel</p>
       </div>
@@ -39,7 +39,7 @@
 
     <figure class="app-screenshot">
       <img
-        src="assets/koakuma-data-grid.jpeg"
+        src="assets/koakuma-data-grid-default.jpeg"
         alt="Koakuma data table workspace on macOS"
         width="1152"
         height="768"
@@ -47,43 +47,52 @@
       >
     </figure>
 
-    <section class="feature-section" id="capabilities">
+    <section class="workflow-section" id="capabilities">
       <div class="section-heading">
-        <p class="eyebrow" data-i18n="libraryServices">Library services</p>
+        <p class="eyebrow" data-i18n="databaseCapabilities">Database capabilities</p>
         <h2 data-i18n="featureHeadline">A familiar for serious database work.</h2>
-        <p data-i18n="featureIntro">The playful name stays at the door when your data needs attention. Inside, every tool is native, deliberate, and close at hand.</p>
+        <p data-i18n="featureIntro">A focused native interface for browsing, querying, inspecting, and editing SQLite databases.</p>
       </div>
-      <div class="feature-grid">
-        <article>
-          <span class="chapter">I</span>
-          <h3 data-i18n="largeTitle">Turn large tables page by page</h3>
-          <p data-i18n="largeBody">Paged loading and a virtualized grid keep hundreds of thousands of rows responsive without filling memory.</p>
+      <div class="workflow-grid">
+        <article class="workflow-card workflow-card-smart-edit">
+          <div class="smart-edit-copy">
+            <span class="chapter">01 · SMART EDIT MODE</span>
+            <h3 data-i18n="smartEditTitle">One double-click. The right editor.</h3>
+            <p data-i18n="smartEditBody">Koakuma routes a cell by its value type, length, detected format, and saved column preference. Short plain text stays inline; long or structured text opens in a focused editor; binary data opens in a viewer.</p>
+            <ul class="smart-edit-routes" aria-label="Smart Edit routes">
+              <li><span data-i18n="shortValue">Short value</span><strong data-i18n="inlineEdit">Inline edit</strong></li>
+              <li><span>JSON · Markdown · SQL · Code</span><strong data-i18n="smartEditor">Smart editor</strong></li>
+              <li><span data-i18n="binaryValue">Image · BLOB</span><strong data-i18n="smartViewer">Smart viewer</strong></li>
+            </ul>
+          </div>
+          <figure class="workflow-json-shot">
+            <img src="assets/koakuma-json-viewer.jpeg" alt="Koakuma Smart Edit Mode showing a JSON value" width="600" height="474" loading="lazy">
+          </figure>
         </article>
-        <article>
-          <span class="chapter">II</span>
-          <h3 data-i18n="findTitle">Find the right volume instantly</h3>
-          <p data-i18n="findBody">Search database objects quickly and keep tables, views, indexes, and triggers organized in one catalog.</p>
+
+        <article class="workflow-card workflow-card-review">
+          <div class="workflow-copy">
+            <span class="chapter">02 · <span data-i18n="reviewKicker">Safe changes</span></span>
+            <h3 data-i18n="reviewTitle">See the change before it lands</h3>
+            <p data-i18n="reviewBody">Cell edits, inserts, and deletes remain pending. Review the affected rows and generated SQL, then commit or discard them together.</p>
+          </div>
+          <div class="review-steps" aria-hidden="true"><span>EDIT</span><i></i><span>REVIEW</span><i></i><span>COMMIT</span></div>
         </article>
-        <article>
-          <span class="chapter">III</span>
-          <h3 data-i18n="valueTitle">Read every hidden script</h3>
-          <p data-i18n="valueBody">Inspect JSON, Markdown, BLOBs, and long text in dedicated viewers that preserve their real structure.</p>
+
+        <article class="workflow-card workflow-card-password">
+          <div class="workflow-copy">
+            <span class="chapter">03 · <span data-i18n="passwordKicker">Password memory</span></span>
+            <h3 data-i18n="passwordTitle">Unlock once. Remember when you choose.</h3>
+            <p data-i18n="passwordBody">Optionally remember an encrypted database password so the same file can reopen without asking again.</p>
+          </div>
+          <div class="security-mark" aria-hidden="true"><span></span></div>
         </article>
-        <article>
-          <span class="chapter">IV</span>
-          <h3 data-i18n="sqlTitle">Cast SQL deliberately</h3>
-          <p data-i18n="sqlBody">Write queries, inspect results, and move between SQL and the surrounding schema without losing context.</p>
-        </article>
-        <article>
-          <span class="chapter">V</span>
-          <h3 data-i18n="safeTitle">Review before binding</h3>
-          <p data-i18n="safeBody">Stage cell edits, inspect the resulting changes, then commit or discard them together.</p>
-        </article>
-        <article>
-          <span class="chapter">VI</span>
-          <h3 data-i18n="cipherTitle">Guard encrypted grimoires</h3>
-          <p data-i18n="cipherBody">Open SQLCipher databases while macOS Keychain keeps credentials out of ordinary configuration files.</p>
-        </article>
+      </div>
+
+      <div class="capability-index" aria-label="More Koakuma capabilities">
+        <article><span class="chapter">04</span><div><h3 data-i18n="sqlIntelligenceTitle">Schema-aware SQL</h3><p data-i18n="sqlIntelligenceBody">Relevant table and column completion, statement-level execution, and visual query plans.</p></div></article>
+        <article><span class="chapter">05</span><div><h3 data-i18n="visualDocumentsTitle">Visual documents</h3><p data-i18n="visualDocumentsBody">Edit Markdown and preview Mermaid or PlantUML diagrams without leaving the database.</p></div></article>
+        <article><span class="chapter">06</span><div><h3 data-i18n="databaseToolsTitle">Database tools</h3><p data-i18n="databaseToolsBody">Back up, verify, restore, check integrity, analyze, and vacuum from one workspace.</p></div></article>
       </div>
     </section>
 
