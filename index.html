@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Koakuma is a native SQLite database client for macOS.">
   <meta name="theme-color" content="#090b13">
-  <title>Koakuma — The little devil in your data library</title>
+  <title>Koakuma — A native SQLite client for macOS</title>
   <link rel="icon" type="image/png" href="assets/koakuma-icon.png">
-  <link rel="stylesheet" href="styles.css?v=20260827-2">
+  <link rel="stylesheet" href="styles.css?v=20260827-3">
 </head>
 <body>
   <header class="site-header">
@@ -25,9 +25,10 @@
 
   <main id="top">
     <section class="hero" id="overview">
+      <div class="hero-atmosphere" aria-hidden="true"><i></i><i></i><i></i></div>
       <div class="hero-copy">
-        <p class="eyebrow" data-i18n="eyebrow">The little devil in your data library</p>
-        <h1 data-i18n="headline">Every table in its place.<br>A whisper away.</h1>
+        <p class="eyebrow" data-i18n="eyebrow">A little devil beside your SQLite database</p>
+        <h1 data-i18n="headline">Reveal what sleeps<br>inside each cell.</h1>
         <p class="hero-description" data-i18n="heroDescription">A native SQLite client for macOS, built for data that does not fit neatly inside a cell.</p>
         <div class="hero-actions">
           <a class="button primary" href="#updates" data-i18n="download">Download for macOS</a>
@@ -35,62 +36,58 @@
         </div>
         <p class="requirements" data-i18n="requirements">Requires macOS 15 or later · Apple silicon and Intel</p>
       </div>
+      <figure class="hero-product">
+        <img
+          src="assets/koakuma-data-grid-default.jpeg"
+          alt="Koakuma data table workspace on macOS"
+          width="1152"
+          height="768"
+          fetchpriority="high"
+        >
+      </figure>
     </section>
 
-    <figure class="app-screenshot">
-      <img
-        src="assets/koakuma-data-grid-default.jpeg"
-        alt="Koakuma data table workspace on macOS"
-        width="1152"
-        height="768"
-        fetchpriority="high"
-      >
-    </figure>
-
-    <section class="workflow-section" id="capabilities">
-      <div class="section-heading">
+    <section class="smart-edit-section" id="capabilities">
+      <div class="smart-edit-lead reveal">
         <p class="eyebrow">Smart Edit Mode</p>
         <h2 data-i18n="featureHeadline">Data is more than plain text.</h2>
-        <p data-i18n="featureIntro">Smart Edit Mode lets every value open in a form that feels natural.</p>
-      </div>
-      <div class="workflow-grid">
-        <article class="workflow-card workflow-card-smart-edit">
-          <div class="smart-edit-copy">
-            <span class="chapter">01 · SMART EDIT MODE</span>
-            <h3 data-i18n="smartEditTitle">JSON as a tree. Markdown as a document. Images as images.</h3>
-            <p data-i18n="smartEditBody">Double-click and work with it directly. Quick edits stay in the table; richer content gets the space and controls it needs.</p>
-            <ul class="format-strip" aria-label="Supported content views">
-              <li>JSON</li><li>Markdown</li><li>SQL</li><li>Code</li><li>Image</li><li>BLOB</li>
-            </ul>
-          </div>
-          <figure class="workflow-json-shot">
-            <img src="assets/koakuma-json-viewer.jpeg" alt="Koakuma Smart Edit Mode showing a JSON value" width="600" height="474" loading="lazy">
-          </figure>
-        </article>
-
-        <article class="workflow-card workflow-card-review">
-          <div class="workflow-copy">
-            <span class="chapter">02 · <span data-i18n="reviewKicker">Changes</span></span>
-            <h3 data-i18n="reviewTitle">Make changes without surprises</h3>
-            <p data-i18n="reviewBody">Edit freely, review everything together, then commit when you are ready.</p>
-          </div>
-          <div class="review-steps" aria-hidden="true"><span>EDIT</span><i></i><span>REVIEW</span><i></i><span>COMMIT</span></div>
-        </article>
-
-        <article class="workflow-card workflow-card-password">
-          <div class="workflow-copy">
-            <span class="chapter">03 · <span data-i18n="passwordKicker">Password memory</span></span>
-            <h3 data-i18n="passwordTitle">Come back without the password prompt</h3>
-            <p data-i18n="passwordBody">Choose to remember the password for an encrypted database and reopen it in one step.</p>
-          </div>
-          <div class="security-mark" aria-hidden="true"><span></span></div>
-        </article>
+        <p data-i18n="featureIntro">Double-click once. What was sealed inside the cell reveals its true form.</p>
       </div>
 
-      <div class="capability-index" aria-label="More Koakuma capabilities">
-        <article><span class="chapter">04</span><div><h3 data-i18n="sqlIntelligenceTitle">Stay in flow with SQL</h3><p data-i18n="sqlIntelligenceBody">Write with schema-aware completion, run the statement you mean, and see the query plan.</p></div></article>
-        <article><span class="chapter">05</span><div><h3 data-i18n="visualDocumentsTitle">Markdown, diagrams, and more</h3><p data-i18n="visualDocumentsBody">Edit documents and preview Mermaid or PlantUML without leaving the database.</p></div></article>
-        <article><span class="chapter">06</span><div><h3 data-i18n="databaseToolsTitle">Maintenance, close at hand</h3><p data-i18n="databaseToolsBody">Back up, verify, restore, check integrity, analyze, and vacuum in one place.</p></div></article>
+      <figure class="smart-edit-product-shot reveal">
+        <img src="assets/koakuma-json-viewer.jpeg" alt="Koakuma Smart Edit Mode displaying JSON as an editable tree" width="600" height="474" loading="lazy">
+        <figcaption>
+          <span class="chapter">SMART EDIT MODE · JSON</span>
+          <p data-i18n="demoCaption">From a compact cell to a structured JSON editor—without leaving the table.</p>
+        </figcaption>
+      </figure>
+
+      <div class="format-statement reveal">
+        <p data-i18n="smartEditTitle">JSON as a tree. Markdown as a document. Images as images.</p>
+        <ul class="format-strip" aria-label="Supported content views">
+          <li>JSON</li><li>Markdown</li><li>SQL</li><li>Code</li><li>Image</li><li>BLOB</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="quiet-features reveal" aria-labelledby="quiet-features-title">
+      <div class="quiet-feature-intro">
+        <p class="eyebrow" data-i18n="quietKicker">A familiar's little tricks</p>
+        <h2 id="quiet-features-title" data-i18n="quietTitle">Leave the lesser rituals to your familiar.</h2>
+      </div>
+      <div class="quiet-feature-list">
+        <article>
+          <span class="chapter">01</span>
+          <div><h3 data-i18n="reviewTitle">Make changes without surprises</h3><p data-i18n="reviewBody">Edit freely, review everything together, then commit when you are ready.</p></div>
+        </article>
+        <article>
+          <span class="chapter">02</span>
+          <div><h3 data-i18n="passwordTitle">Come back without the password prompt</h3><p data-i18n="passwordBody">Choose to remember the password for an encrypted database and reopen it in one step.</p></div>
+        </article>
+        <article>
+          <span class="chapter">03</span>
+          <div><h3 data-i18n="sqlIntelligenceTitle">Stay in flow with SQL</h3><p data-i18n="sqlIntelligenceBody">Write with schema-aware completion, run the statement you mean, and see the query plan.</p></div>
+        </article>
       </div>
     </section>
 
@@ -113,6 +110,6 @@
     <p class="fan-notice" data-i18n="fanNotice">Touhou Project is created by Team Shanghai Alice. Koakuma is an independent product using original fan-inspired motifs and is not affiliated with or endorsed by Team Shanghai Alice.</p>
   </footer>
 
-  <script src="site.js?v=20260827-2"></script>
+  <script src="site.js?v=20260827-3"></script>
 </body>
 </html>
