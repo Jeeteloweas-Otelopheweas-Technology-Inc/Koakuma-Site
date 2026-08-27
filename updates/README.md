@@ -8,9 +8,9 @@ For each formal release:
 
 1. Build the Developer ID signed application.
 2. Package, notarize, staple, and verify the DMG.
-3. Create a GitHub Release in `XadillaX/koakuma` and upload the DMG.
+3. Upload the DMG to the official immutable release storage.
 4. Generate the appcast with Sparkle's `generate_appcast` tool so the enclosure contains the exact build number, file size, and EdDSA signature.
-5. Point the enclosure URL at the immutable GitHub Release asset.
+5. Point the enclosure URL at the immutable release asset.
 6. Commit the generated appcast and release notes here.
 7. Verify the public feed and test an update from the previous released build before publishing the Git tag broadly.
 
