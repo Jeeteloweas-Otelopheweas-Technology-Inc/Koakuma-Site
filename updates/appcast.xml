@@ -1,9 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
-  <channel>
-    <title>Koakuma Updates</title>
-    <link>https://jeeteloweas-otelopheweas-technology-inc.github.io/Koakuma-Site/updates/appcast.xml</link>
-    <description>Stable updates for Koakuma on macOS.</description>
-    <language>en</language>
-  </channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+    <channel>
+        <title>Koakuma Updates</title>
+        <link>https://jeeteloweas-otelopheweas-technology-inc.github.io/Koakuma-Site/updates/appcast.xml</link>
+        <description>Stable updates for Koakuma on macOS.</description>
+        <language>en</language>
+        <item>
+            <title>1.0.7</title>
+            <pubDate>Fri, 28 Aug 2026 11:40:14 +0800</pubDate>
+            <link>https://jeeteloweas-otelopheweas-technology-inc.github.io/Koakuma-Site/</link>
+            <sparkle:version>13</sparkle:version>
+            <sparkle:shortVersionString>1.0.7</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://github.com/Jeeteloweas-Otelopheweas-Technology-Inc/Koakuma-Site/releases/download/v1.0.7/Koakuma-1.0.7.dmg" length="54019802" type="application/octet-stream" sparkle:edSignature="Hxh9KVrPpa9iGC92gGbhhhM6WM/w/l/sOppXPPPz2S+SWMr7+isSTj1/sc5mlJEZHTLFbSlYlnyWLdPvgVIXDA=="/>
+        </item>
+    </channel>
 </rss>
