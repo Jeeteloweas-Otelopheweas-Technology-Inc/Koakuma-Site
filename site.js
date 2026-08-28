@@ -19,7 +19,7 @@ const translations = {
     databaseToolsTitle: "Maintenance, close at hand", databaseToolsBody: "Back up, verify, restore, check integrity, analyze, and vacuum in one place.",
     libraryWhispers: "Whispers after midnight", updatesTitle: "New magic, delivered quietly.",
     updatesBody: "Koakuma checks its official signed update feed, verifies each release, and lets you install without leaving the app.",
-    comingSoon: "Signed download coming soon",
+    downloadLatest: "Download Koakuma {version}",
     fanNotice: "Touhou Project is created by Team Shanghai Alice. Koakuma is an independent product using original fan-inspired motifs and is not affiliated with or endorsed by Team Shanghai Alice."
   },
   zh: {
@@ -42,7 +42,7 @@ const translations = {
     databaseToolsTitle: "日常维护，触手可及", databaseToolsBody: "在一个地方完成备份、验证、恢复、完整性检查、分析与整理。",
     libraryWhispers: "午夜后的低语", updatesTitle: "新的魔法，悄然送达。",
     updatesBody: "Koakuma 通过官方签名更新源检查新版本，验证每次发布，并让你无需离开 App 即可安装。",
-    comingSoon: "签名下载即将开放",
+    downloadLatest: "下载 Koakuma {version}",
     fanNotice: "Touhou Project 由上海爱丽丝幻乐团创作。Koakuma 是采用原创同人灵感元素的独立产品，与上海爱丽丝幻乐团不存在从属或授权关系。"
   }
 };
@@ -50,13 +50,14 @@ const translations = {
 const languageButton = document.querySelector("#language-button");
 const preferredLanguage = navigator.language.toLowerCase().startsWith("zh") ? "zh" : "en";
 let language = localStorage.getItem("koakuma-site-language") || preferredLanguage;
+let latestVersion = "1.0.7";
 
 function applyLanguage(nextLanguage) {
   language = nextLanguage;
   document.documentElement.lang = language === "zh" ? "zh-Hans" : "en";
   document.querySelectorAll("[data-i18n]").forEach((element) => {
     const value = translations[language][element.dataset.i18n];
-    if (value) element.textContent = value;
+    if (value) element.textContent = value.replace("{version}", latestVersion);
   });
   languageButton.textContent = language === "zh" ? "EN" : "中文";
   localStorage.setItem("koakuma-site-language", language);
@@ -65,6 +66,38 @@ function applyLanguage(nextLanguage) {
 languageButton.addEventListener("click", () => applyLanguage(language === "zh" ? "en" : "zh"));
 document.querySelector("#year").textContent = new Date().getFullYear();
 applyLanguage(language);
+
+async function syncLatestDownload() {
+  try {
+    const response = await fetch("updates/appcast.xml", { cache: "no-cache" });
+    if (!response.ok) return;
+
+    const feedDocument = new DOMParser().parseFromString(await response.text(), "application/xml");
+    if (feedDocument.querySelector("parsererror")) return;
+
+    const item = feedDocument.querySelector("channel > item");
+    const enclosure = item?.querySelector("enclosure");
+    const versionElement = item
+      ? Array.from(item.children).find((element) => element.localName === "shortVersionString")
+      : null;
+    const downloadURL = enclosure?.getAttribute("url");
+    const version = versionElement?.textContent?.trim() || item?.querySelector("title")?.textContent?.trim();
+
+    if (downloadURL) {
+      document.querySelectorAll("[data-download-latest]").forEach((link) => {
+        link.href = downloadURL;
+      });
+    }
+    if (version) {
+      latestVersion = version;
+      applyLanguage(language);
+    }
+  } catch {
+    // Keep the static, known-good release link when the feed is temporarily unavailable.
+  }
+}
+
+syncLatestDownload();
 
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const revealElements = document.querySelectorAll(".reveal");
