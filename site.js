@@ -50,7 +50,7 @@ const translations = {
 const languageButton = document.querySelector("#language-button");
 const preferredLanguage = navigator.language.toLowerCase().startsWith("zh") ? "zh" : "en";
 let language = localStorage.getItem("koakuma-site-language") || preferredLanguage;
-let latestVersion = "1.0.7";
+let latestVersion = "1.0.9";
 
 function applyLanguage(nextLanguage) {
   language = nextLanguage;
