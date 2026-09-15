@@ -6,6 +6,16 @@
         <description>Stable updates for Koakuma on macOS.</description>
         <language>en</language>
         <item>
+            <title>1.0.10</title>
+            <pubDate>Wed, 16 Sep 2026 00:19:35 +0800</pubDate>
+            <link>https://koakuma.kacaka.ca/</link>
+            <sparkle:version>16</sparkle:version>
+            <sparkle:shortVersionString>1.0.10</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+            <sparkle:releaseNotesLink>https://koakuma.kacaka.ca/updates/Koakuma-1.0.10.html</sparkle:releaseNotesLink>
+            <enclosure url="https://github.com/Jeeteloweas-Otelopheweas-Technology-Inc/Koakuma-Site/releases/download/v1.0.10/Koakuma-1.0.10.dmg" length="73599484" type="application/octet-stream" sparkle:edSignature="BMP8eH3nK2C34jXIFX82soq9te5RWYtAo8qgg5E0ZKSRByJLn+vq8m6TXXpRq0nm8EvQYyT9VzKsGWbAJ+LSCA=="/>
+        </item>
+        <item>
             <title>1.0.9</title>
             <pubDate>Tue, 15 Sep 2026 14:11:53 +0800</pubDate>
             <link>https://koakuma.kacaka.ca/</link>
